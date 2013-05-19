@@ -3,7 +3,7 @@
 include (FindPackageHandleStandardArgs)
 include (CheckFunctionExists)
 
-find_path(CBLOCKS_PUBLIC_INCLUDE_DIR Block.h
+find_path(CBLOCKS_PUBLIC_INCLUDE_DIR objc/blocks_runtime.h
   DOC "Path to Block.h"
 )
 
@@ -25,7 +25,7 @@ check_function_exists(CBLOCKS_RUNTIME_IN_LIBC _Block_copy)
 if (CBLOCKS_RUNTIME_IN_LIBC)
   set (CBLOCKS_LIBRARIES " ")
 else ()
-  find_library(CBLOCKS_LIBRARIES "BlocksRuntime")
+  find_library(CBLOCKS_LIBRARIES "objc")
 endif ()
 
 check_c_compiler_flag("-fblocks" CBLOCKS_COMPILER_SUPPORT_FOUND)

@@ -27,7 +27,7 @@
 #include <assert.h>
 
 #include <bsdtests.h>
-#include <Block.h>
+#include <objc/blocks_runtime.h>
 
 #include "dispatch_test.h"
 

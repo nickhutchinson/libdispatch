@@ -162,8 +162,8 @@
 #include <netinet/in.h>
 
 #ifdef __BLOCKS__
-#include <Block_private.h>
-#include <Block.h>
+#include <objc/blocks_private.h>
+#include <objc/blocks_runtime.h>
 #endif /* __BLOCKS__ */
 
 #include <assert.h>

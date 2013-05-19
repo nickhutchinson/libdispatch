@@ -38,7 +38,7 @@
 #if HAVE_TARGETCONDITIONALS_H
 #include <TargetConditionals.h>
 #endif
-#include <Block.h>
+#include <objc/blocks_runtime.h>
 
 #include <dispatch/dispatch.h>
 

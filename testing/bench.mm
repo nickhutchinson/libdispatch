@@ -33,7 +33,7 @@
 #include <pthread.h>
 #include <math.h>
 #ifdef __BLOCKS__
-#include <Block.h>
+#include <objc/blocks_runtime.h>
 #endif
 #include <dispatch/dispatch.h>
 #include <dispatch/private.h>
