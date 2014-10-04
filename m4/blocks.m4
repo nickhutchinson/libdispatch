@@ -44,11 +44,11 @@ AS_IF([test "x$dispatch_cv_cblocks" != "xno"], [
 	AC_MSG_RESULT([no]);
     ], [
       saveLIBS="$LIBS"
-      LIBS="$LIBS -lBlocksRuntime"
+      LIBS="$LIBS -lobjc"
       AC_TRY_LINK([], [
 	^{ int k; k=0; }();
       ], [
-	AC_MSG_RESULT([-lBlocksRuntime])
+	AC_MSG_RESULT([-lobjc])
       ], [
 	AC_MSG_ERROR([can't find Blocks runtime])
       ])
@@ -91,11 +91,11 @@ AS_IF([test "x$dispatch_cv_cxxblocks" != "xno"], [
 	AC_MSG_RESULT([no]);
     ], [
       saveLIBS="$LIBS"
-      LIBS="$LIBS -lBlocksRuntime"
+      LIBS="$LIBS -lobjc"
       AC_TRY_LINK([], [
 	^{ int k; k=0; }();
       ], [
-	AC_MSG_RESULT([-lBlocksRuntime])
+	AC_MSG_RESULT([-lobjc])
       ], [
 	AC_MSG_ERROR([can't find Blocks runtime])
       ])

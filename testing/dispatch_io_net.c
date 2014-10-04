@@ -39,7 +39,7 @@
 #if __APPLE__
 #include <mach-o/dyld.h>
 #endif
-#include <Block.h>
+#include <objc/blocks_runtime.h>
 
 #include <bsdtests.h>
 #include "dispatch_test.h"
