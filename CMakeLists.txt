@@ -15,7 +15,6 @@ include (CheckCCompilerFlag)
 include (CheckCSourceCompiles)
 include (CMakePushCheckState)
 
-include (CPack)
 set(CPACK_STRIP_FILES					ON)
 set(CPACK_PACKAGE_CONTACT			 	"Not Me <noone@foobar.com>")
 set(CPACK_PACKAGE_NAME					"LIBDISPATCH-${DISPATCH_VERSION}")
@@ -28,6 +27,7 @@ set(CPACK_PACKAGE_VERSION_PATCH			"${DISPATCH_VERSION_PATCH}")
 
 set(CPACK_DEBIAN_PACKAGE_VERSION		"${DISPATCH_VERSION}")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS		"libc6 (>=2.7), libblocksruntime0 (>=0.4), libpthread-workqueue0 (>=0.9), libkqueue0 (>=2.0.3)")
+include (CPack)
 
 
 #///////////////////////////////////////////////////////////////////////////////
