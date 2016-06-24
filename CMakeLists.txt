@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 2.8.7)
 
 project (dispatch)
-set (DISPATCH_VERSION 0.1.3.1)
+set (DISPATCH_VERSION_MAJOR 0)
+set (DISPATCH_VERSION_MINOR 1)
+set (DISPATCH_VERSION_PATCH 3)
+set (DISPATCH_VERSION_SUFFIX ".1")
+set (DISPATCH_VERSION "${DISPATCH_VERSION_MAJOR}.${DISPATCH_VERSION_MINOR}.${DISPATCH_VERSION_PATCH}${DISPATCH_VERSION_SUFFIX}")
 set (DISPATCH_ABI_VERSION 1)
 
 list (APPEND CMAKE_MODULE_PATH "${dispatch_SOURCE_DIR}/cmake")
@@ -10,6 +14,21 @@ include (BuildUtil)
 include (CheckCCompilerFlag)
 include (CheckCSourceCompiles)
 include (CMakePushCheckState)
+
+set(CPACK_STRIP_FILES					ON)
+set(CPACK_PACKAGE_CONTACT			 	"Not Me <noone@foobar.com>")
+set(CPACK_PACKAGE_NAME					"LIBDISPATCH-${DISPATCH_VERSION}")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY	"Linux port of Apple's open-source concurrency library")
+set(CPACK_RESOURCE_FILE_LICENSE			"${dispatch_SOURCE_DIR}/LICENSE")
+set(CPACK_PACKAGE_DESCRIPTION_FILE		"${dispatch_SOURCE_DIR}/README.md")
+set(CPACK_PACKAGE_VERSION_MAJOR			"${DISPATCH_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR			"${DISPATCH_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_PATCH			"${DISPATCH_VERSION_PATCH}")
+
+set(CPACK_DEBIAN_PACKAGE_VERSION		"${DISPATCH_VERSION}")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS		"libc6 (>=2.7), libblocksruntime0 (>=0.4), libpthread-workqueue0 (>=0.9), libkqueue0 (>=2.0.3)")
+include (CPack)
+
 
 #///////////////////////////////////////////////////////////////////////////////
 if (NOT CMAKE_BUILD_TYPE)
